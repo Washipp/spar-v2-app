@@ -1,0 +1,46 @@
+
+<div class="row">
+  <form #f="ngForm" (ngSubmit)="onSubmit()" class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="originalPrice">Original Price</label>
+        <input autocapitalize="off" autocomplete="off" id="originalPrice" spellcheck="false" type="tel"
+               #originalPrice="ngModel"
+               currencyMask [options]="{ align: 'left', prefix: 'CHF ', thousands: '\'', decimal: '.' }"
+               [(ngModel)]="model.originalPrice" name="originalPrice">
+      </div>
+      <div class="input-field col s6">
+        <label for="percent">Percent</label>
+        <input autocapitalize="off" autocomplete="off" id="percent" max="100" maxlength="3" spellcheck="false"
+               type="tel"
+               #percent="ngModel"
+               currencyMask [options]="{ align: 'left', prefix: '',suffix: '%', thousands: '\'', decimal: '.', precision: '0' }"
+               [(ngModel)]="model.percent" name="percent">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <label for="budgetPrice">Budget Price</label>
+        <input autocapitalize="off" autocomplete="off" id="budgetPrice" spellcheck="false" type="tel"
+               #budgetPrice="ngModel"
+               currencyMask [options]="{ align: 'left', prefix: 'CHF ', thousands: '\'', decimal: '.' }"
+               [(ngModel)]="model.budgetPrice" name="budgetPrice">
+      </div>
+    </div>
+    <div class="center-align">
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content text-black">
+              <span class="card-title">Saving up:</span>
+              <div class="jumbotron">&#160;{{ model.getSavedAmount() | currency:'CHF ' }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button [disabled]="!model.isSavable()" class="waves-effect waves-light btn-large" id="save" type="submit">Save!
+      </button>
+    </div>
+  </form>
+</div>
+

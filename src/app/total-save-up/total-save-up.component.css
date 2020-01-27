@@ -1,0 +1,18 @@
+.btn-large {
+  background-color: #0a4200ab;
+}
+
+.card {
+  border: 2px solid #0a4200;
+  background-color: #f1f1f1;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.delete-total-saved {
+  margin-top: 5%;
+}
+
+.delete-total-saved a {
+  color: lightgray;
+}

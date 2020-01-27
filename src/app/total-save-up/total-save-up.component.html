@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content black-text">
+        <span class="card-title">Total saved up:</span>
+        <div class="jumbotron">{{ totalSaved | currency:'CHF ' }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="center-align">
+  <a class="waves-effect waves-light btn-large" routerLink="/save"><i class="material-icons right">add_box</i>SPAR!</a>
+</div>
+<div></div>
+<div class="center-align delete-total-saved">
+  <a (click)="resetTotalSaved()" routerLink="/home">Reset Total Saved!</a>
+</div>
+<a class="waves-effect waves-light btn modal-trigger" href="#deleteTotalSavedModal">Reset Total Saved!</a>
+<div class="modal" id="deleteTotalSavedModal">
+  <div class="modal-content">
+    <h4>Confirmation</h4>
+    <p>Are you sure you want to delete your saved up money?</p>
+  </div>
+  <div class="modal-footer">n
+    <a class="modal-close waves-effect waves-green btn-flat" routerLink="/home">Disgree</a>
+    <a (click)="resetTotalSaved()" class="modal-close waves-effect waves-green btn-flat" routerLink="/home">Agree</a>
+  </div>
+</div>
