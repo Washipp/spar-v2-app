@@ -14,6 +14,10 @@ export class AccountDbService {
     }
   }
 
+  isEmpty() {
+    return this.getTotal() === 0;
+  }
+
   getTotal() {
     return Number(localStorage.getItem(this.savedUpKey));
   }

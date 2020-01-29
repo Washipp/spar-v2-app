@@ -9,16 +9,11 @@ import {AccountDbService} from '../services/account-db.service';
 export class TotalSaveUpComponent {
 
   totalSaved: number;
-  private service;
+  service;
 
   constructor(db: AccountDbService) {
     this.service = db;
     this.updateTotalSaved();
-    /** Initialize Delete Modal
-     document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems);
-    });**/
   }
 
 
@@ -29,5 +24,10 @@ export class TotalSaveUpComponent {
   resetTotalSaved() {
     this.service.deleteTotal();
     this.updateTotalSaved();
+  }
+
+  loadModal() {
+    // @ts-ignore
+    M.Modal.init(document.querySelectorAll('.modal'));
   }
 }

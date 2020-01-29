@@ -9,20 +9,22 @@
   </div>
 </div>
 <div class="center-align">
-  <a class="waves-effect waves-light btn-large" routerLink="/save"><i class="material-icons right">add_box</i>SPAR!</a>
+  <a class="waves-effect waves-light btn-large" routerLink="/save"><i class="material-icons right">add_circle</i>SPAR!</a>
 </div>
 <div></div>
-<div class="center-align delete-total-saved">
-  <a (click)="resetTotalSaved()" routerLink="/home">Reset Total Saved!</a>
+<div class="center-align delete-total-saved-trigger">
+  <!-- Modal Trigger -->
+  <a class="modal-trigger" href="#resetTotalSaved" (click)="loadModal()">Reset Total Saved!</a>
 </div>
-<a class="waves-effect waves-light btn modal-trigger" href="#deleteTotalSavedModal">Reset Total Saved!</a>
-<div class="modal" id="deleteTotalSavedModal">
+
+<!-- Modal Structure -->
+<div id="resetTotalSaved" class="modal">
   <div class="modal-content">
     <h4>Confirmation</h4>
     <p>Are you sure you want to delete your saved up money?</p>
   </div>
-  <div class="modal-footer">n
-    <a class="modal-close waves-effect waves-green btn-flat" routerLink="/home">Disgree</a>
-    <a (click)="resetTotalSaved()" class="modal-close waves-effect waves-green btn-flat" routerLink="/home">Agree</a>
+  <div class="center-align ">
+    <a class="modal-close waves-effect waves-green btn red-btn delete-total-saved">Disgree</a>
+    <a (click)="resetTotalSaved()" class="modal-close waves-effect waves-green btn green-btn delete-total-saved">Agree</a>
   </div>
 </div>

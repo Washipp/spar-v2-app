@@ -10,7 +10,7 @@ import {AccountDbService} from '../services/account-db.service';
 export class SaveUpComponent {
 
   model = new SavedAmount();
-  service;
+  private service;
 
   constructor(db: AccountDbService) {
     this.service = db;

@@ -1,5 +1,10 @@
 .btn-large {
   background-color: #0a4200ab;
+  font-size: 1.5em;
+}
+
+.btn-large i {
+  font-size: 30px;
 }
 
 .card {
@@ -9,10 +14,23 @@
   font-size: 2rem;
 }
 
-.delete-total-saved {
+.green-btn {
+  background-color: #0a4200ab;
+}
+
+.red-btn {
+  background-color: #ff6156;
+}
+
+.delete-total-saved-trigger {
   margin-top: 5%;
 }
 
-.delete-total-saved a {
-  color: lightgray;
+.delete-total-saved {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.delete-total-saved-trigger a {
+  color: #808080;
 }
