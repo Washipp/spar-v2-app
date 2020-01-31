@@ -27,6 +27,8 @@ export class TotalSaveUpComponent {
   }
 
   loadModal() {
+    const languageCode = navigator.language;
+    console.log(languageCode);
     // @ts-ignore
     M.Modal.init(document.querySelectorAll('.modal'));
   }

@@ -9,6 +9,8 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { RouterModule, Routes} from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AccountDbService } from './services/account-db.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: 'home', component: TotalSaveUpComponent },
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     CurrencyMaskModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AccountDbService],
   bootstrap: [AppComponent]
